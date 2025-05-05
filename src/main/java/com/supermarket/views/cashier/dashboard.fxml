@@ -1,0 +1,16 @@
+<BorderPane>
+    <top>
+        <Label text="Point de Vente" style="-fx-font-size: 18;"/>
+    </top>
+    <center>
+        <TableView fx:id="productsTable">
+            <columns>
+                <TableColumn text="Nom" property="name"/>
+                <TableColumn text="Prix" property="price"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <Button text="Valider la vente" onAction="#handleCheckout"/>
+    </bottom>
+</BorderPane>

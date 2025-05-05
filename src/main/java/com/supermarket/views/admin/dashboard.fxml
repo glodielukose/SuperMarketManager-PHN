@@ -1,0 +1,15 @@
+<TabPane>
+    <Tab text="Gestion Utilisateurs">
+        <TableView fx:id="usersTable">
+            <columns>
+                <TableColumn text="ID" property="id"/>
+                <TableColumn text="Nom" property="username"/>
+                <TableColumn text="Rôle" property="role"/>
+            </columns>
+        </TableView>
+        <Button text="Ajouter" onAction="#handleAddUser"/>
+    </Tab>
+    <Tab text="Gestion Produits">
+        <!-- Tableau des produits -->
+    </Tab>
+</TabPane>
