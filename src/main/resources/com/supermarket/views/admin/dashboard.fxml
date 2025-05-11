@@ -1,15 +1,43 @@
-<TabPane>
-    <Tab text="Gestion Utilisateurs">
-        <TableView fx:id="usersTable">
-            <columns>
-                <TableColumn text="ID" property="id"/>
-                <TableColumn text="Nom" property="username"/>
-                <TableColumn text="Rôle" property="role"/>
-            </columns>
-        </TableView>
-        <Button text="Ajouter" onAction="#handleAddUser"/>
-    </Tab>
-    <Tab text="Gestion Produits">
-        <!-- Tableau des produits -->
-    </Tab>
-</TabPane>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.supermarket.controllers.admin.AdminDashboardController"
+      spacing="10"
+      style="-fx-padding: 20;"
+      prefWidth="800" prefHeight="600">
+
+    <Label text="Tableau de bord Administrateur" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+    <TabPane>
+        <Tab text="Gestion Utilisateurs">
+            <VBox spacing="10">
+                <TableView fx:id="usersTable" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="userIdColumn" text="ID"/>
+                        <TableColumn fx:id="usernameColumn" text="Nom"/>
+                        <TableColumn fx:id="userRoleColumn" text="Rôle"/>
+                    </columns>
+                </TableView>
+                <Button text="Ajouter Utilisateur" onAction="#handleAddUser"/>
+            </VBox>
+        </Tab>
+
+        <Tab text="Gestion Produits">
+            <VBox spacing="10">
+                <TableView fx:id="productsTable" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="productIdColumn" text="ID"/>
+                        <TableColumn fx:id="productNameColumn" text="Nom"/>
+                        <TableColumn fx:id="productPriceColumn" text="Prix"/>
+                        <TableColumn fx:id="productStockColumn" text="Stock"/>
+                    </columns>
+                </TableView>
+                <Button text="Ajouter Produit" onAction="#handleAddProduct"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

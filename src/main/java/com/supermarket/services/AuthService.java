@@ -12,8 +12,11 @@ public class AuthService {
         this.userDAO = userDAO;
     }
 
-    public boolean login(String username, String password) throws SQLException {
+    public User login(String username, String password) throws SQLException {
         User user = userDAO.findByUsername(username);
-        return user != null && user.getPassword().equals(password);
+        if (user != null && user.getPassword().equals(password)) {
+            return user; // Retourne l'objet User complet (Admin ou Cashier)
+        }
+        return null; // Échec de l'authentification
     }
 }
